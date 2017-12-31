@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/* HOME画面 */
+Route::get('/', 'HomeController@index');
