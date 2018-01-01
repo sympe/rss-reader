@@ -13,15 +13,18 @@ class RssController extends Controller
 
   public function index()
   {
-      $feed = Feeds::make('http://blog.case.edu/news/feed.atom');
-      // $data = array(
-      //   'title'     => $feed->get_title(),
-      //   'permalink' => $feed->get_permalink(),
-      //   'items'     => $feed->get_items(),
-      // );
-      $data['title'] = $feed->get_title();
-      $data['items'] = $feed->get_items(0, self::MAX_FEED_NUM);
-      // Log::debug(print_r($feed->get_items(0, self::MAX_FEED_NUM), true));
+      $feed = Feeds::make('http://b.hatena.ne.jp/hotentry/it.rss');
+
+      $data['items'] = [];
+
+      $items = $feed->get_items(0, self::MAX_FEED_NUM);
+
+      foreach ($items as $item) {
+        $list_item['title'] = $item->get_title();
+        $list_item['link'] = $item->get_permalink();
+        $list_item['description'] = $item->get_description();
+        $data['items'][] = $list_item;
+      }
 
       return response()->json($data);
   }

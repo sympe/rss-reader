@@ -16,6 +16,8 @@
         "jquery": "^3.2",
         "laravel-mix": "^1.0",
         "lodash": "^4.17.4",
-        "vue": "^2.5.7"
+        "onsenui": "^2.8.3",
+        "vue": "^2.5.7",
+        "vue-onsenui": "^2.4.3"
     }
 }

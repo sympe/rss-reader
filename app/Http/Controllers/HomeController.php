@@ -14,7 +14,6 @@ class HomeController extends Controller
   {
       $feed = Feeds::make('http://b.hatena.ne.jp/hotentry/it.rss');
 
-      $data['title'] = $feed->get_title();
       $data['items'] = $feed->get_items(0, self::MAX_FEED_NUM);
 
       return view('home.index')->with($data);

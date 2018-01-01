@@ -1,12 +1,17 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Rss Reader</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+</head>
 <body>
-  @foreach ($items as $item)
-    <div class="item">
-      <h2><a href="{{ $item->get_permalink() }}">{{ $item->get_title() }}</a></h2>
-      <p>{{ $item->get_description() }}</p>
-    </div>
-  @endforeach
   <div id="app">
-    <example-component></example-component>
+    <rss-list></rss-list>
   </div>
   <script src="js/app.js"></script>
 </body>
