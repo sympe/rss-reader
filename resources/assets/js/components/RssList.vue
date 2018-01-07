@@ -7,11 +7,8 @@
 
       <v-ons-list>
         <template v-for='item in items'>
-          <v-ons-list-item>
-            <v-ons-card @click="transition(item.link)">
-              <div class="title">{{ item.title }}</div>
-              <div class="content">{{ item.description }}</div>
-            </v-ons-card>
+          <v-ons-list-item tappable @click="transition(item.link)">
+            {{ item.title }}
           </v-ons-list-item>
         </template>
       </v-ons-list>
@@ -42,3 +39,14 @@ export default {
     }
 }
 </script>
+
+<style>
+.list-item {
+  height: 80px;
+}
+.list-item__center {
+  height: 80px;
+  position: absolute;
+  align-items: baseline;
+}
+</style>
