@@ -8,7 +8,7 @@
       <v-ons-list>
         <template v-for='item in items'>
           <v-ons-list-item tappable @click="transition(item.link)">
-            {{ item.title }}
+            <div class="list-item-content">{{ item.title }}</div>
           </v-ons-list-item>
         </template>
       </v-ons-list>
@@ -48,5 +48,11 @@ export default {
   height: 80px;
   position: absolute;
   align-items: baseline;
+}
+.list-item-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 </style>

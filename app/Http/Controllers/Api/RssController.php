@@ -9,15 +9,13 @@ use Log;
 
 class RssController extends Controller
 {
-  const MAX_FEED_NUM = 10;
-
   public function index()
   {
       $feed = Feeds::make('http://b.hatena.ne.jp/hotentry/it.rss');
 
       $data['items'] = [];
 
-      $items = $feed->get_items(0, self::MAX_FEED_NUM);
+      $items = $feed->get_items();
 
       foreach ($items as $item) {
         $list_item['title'] = $item->get_title();
